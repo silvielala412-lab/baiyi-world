@@ -1,0 +1,427 @@
+/* ── TopBar v4 · 三行布局：品牌行 / 搜索行 / 分类tab ── */
+
+.bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  z-index: var(--z-navbar);
+  background: rgba(8, 6, 4, 0.94);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border-bottom: 1px solid rgba(200, 169, 110, 0.12);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.5), 0 4px 24px rgba(0,0,0,0.3);
+}
+
+/* ─────────────────────────────────────────────
+   Row 1: Logo · City · Notification · Live
+───────────────────────────────────────────── */
+.brandRow {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px 4px;
+  gap: 8px;
+  height: 46px;
+}
+
+/* Logo group */
+.logoBlock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--gradient-gold, linear-gradient(135deg, #e2c27d, #c8a96e));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display, serif);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #0a0806;
+  box-shadow: 0 2px 8px rgba(200,169,110,0.35);
+  flex-shrink: 0;
+}
+
+.logoTextGroup {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 1px;
+}
+
+.logoText {
+  font-family: var(--font-display, serif);
+  font-size: 0.95rem;
+  font-weight: 900;
+  background: var(--gradient-gold-text, linear-gradient(90deg, #e2c27d, #c8a96e));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.04em;
+}
+
+.logoSub {
+  font-size: 0.55rem;
+  color: var(--cream-500, #8c7d65);
+  letter-spacing: 0.12em;
+  padding-left: 1px;
+}
+
+/* City block */
+.cityBlock {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cityBtn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(200, 169, 110, 0.1);
+  border: 1px solid rgba(200, 169, 110, 0.22);
+  border-radius: 20px;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.cityBtn:hover {
+  background: rgba(200, 169, 110, 0.18);
+}
+
+.cityIcon {
+  font-size: 0.65rem;
+  line-height: 1;
+}
+
+.cityName {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold-300, #c8a96e);
+  letter-spacing: 0.02em;
+  max-width: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cityArrow {
+  font-size: 0.85rem;
+  color: var(--gold-400, #b8975a);
+  transition: transform 0.2s ease;
+  line-height: 1;
+  display: inline-block;
+}
+
+.cityArrowOpen { transform: rotate(90deg); }
+
+/* Notification button */
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: background 0.15s ease;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.iconBtn:hover { background: rgba(255,255,255,0.08); }
+
+.notifDot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 7px;
+  height: 7px;
+  background: var(--red-500, #E53935);
+  border-radius: 50%;
+  border: 1.5px solid rgba(8,6,4,0.9);
+  box-shadow: 0 0 6px rgba(229,57,53,0.6);
+}
+
+/* Live badge */
+.liveBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(229,57,53,0.12);
+  border: 1px solid rgba(229,57,53,0.35);
+  color: #FF5252;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.liveBtn:hover {
+  background: rgba(229,57,53,0.2);
+  border-color: rgba(229,57,53,0.6);
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  background: #FF5252;
+  border-radius: 50%;
+  animation: live-dot 1.2s ease infinite;
+  flex-shrink: 0;
+}
+
+@keyframes live-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* ─────────────────────────────────────────────
+   Row 2: 独立全宽搜索栏
+───────────────────────────────────────────── */
+.searchRow {
+  padding: 0 12px 8px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  /* 更突出的搜索框 */
+  background: rgba(255, 255, 255, 0.09);
+  border: 1.5px solid rgba(200, 169, 110, 0.28);
+  border-radius: 22px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  text-decoration: none;
+  height: 38px;
+}
+
+.searchBar:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(200, 169, 110, 0.55);
+  box-shadow: 0 0 14px rgba(200,169,110,0.15);
+}
+
+.searchBar:active {
+  background: rgba(200, 169, 110, 0.1);
+}
+
+.searchIcon {
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.searchPlaceholder {
+  flex: 1;
+  font-size: 0.8rem;
+  color: var(--cream-300, #d4c5a9);
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+
+.searchScanIcon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  opacity: 0.45;
+  padding-left: 8px;
+  border-left: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ─────────────────────────────────────────────
+   Row 3: Sub-tabs
+───────────────────────────────────────────── */
+.subTabs {
+  display: flex;
+  gap: 6px;
+  padding: 0 12px 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.subTabs::-webkit-scrollbar { display: none; }
+
+.subTab {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 13px;
+  border-radius: 20px;
+  color: var(--cream-400, #b8a98a);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.subTab:hover {
+  color: var(--cream-200, #e8d9b8);
+  background: rgba(200,169,110,0.1);
+  border-color: rgba(200,169,110,0.25);
+}
+
+.subTabActive {
+  color: var(--gold-200, #e2c27d) !important;
+  background: rgba(200,169,110,0.18) !important;
+  border-color: rgba(200,169,110,0.45) !important;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────
+   City panel dropdown
+───────────────────────────────────────────── */
+.cityPanel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 260px;
+  background: rgba(14, 11, 8, 0.97);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid rgba(200, 169, 110, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,169,110,0.06);
+  z-index: 999;
+  overflow: hidden;
+  animation: panel-in 0.18s ease;
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cityPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cream-300, #d4c5a9);
+  letter-spacing: 0.06em;
+}
+
+.locateBtn {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gold-300, #c8a96e);
+  background: rgba(200, 169, 110, 0.1);
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  border-radius: 20px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.locateBtn:hover:not(:disabled) {
+  background: rgba(200, 169, 110, 0.2);
+  border-color: rgba(200, 169, 110, 0.5);
+}
+
+.locateBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.cityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 10px 12px 14px;
+}
+
+.cityItem {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--cream-400, #b8a98a);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 6px 2px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+
+.cityItem:hover {
+  color: var(--cream-100, #f5ecd7);
+  background: rgba(200, 169, 110, 0.1);
+  border-color: rgba(200, 169, 110, 0.3);
+}
+
+.cityItemActive {
+  color: var(--gold-200, #e2c27d) !important;
+  background: rgba(200, 169, 110, 0.2) !important;
+  border-color: rgba(200, 169, 110, 0.5) !important;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────
+   Back navigation variant
+───────────────────────────────────────────── */
+.backRow {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 52px;
+  gap: 8px;
+  position: relative;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--gold-400, #b8975a);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: background 0.15s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.backBtn:hover { background: rgba(200,169,110,0.1); }
+
+.backArrow { font-size: 1rem; line-height: 1; }
+
+.titleCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display, serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cream-100, #f5ecd7);
+  white-space: nowrap;
+  pointer-events: none;
+  margin: 0;
+}

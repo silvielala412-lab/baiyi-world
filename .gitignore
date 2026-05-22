@@ -1,0 +1,37 @@
+# ── Node / Next.js ──
+node_modules/
+.next/
+out/
+.vercel/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# ── Env / secrets ──
+.env
+.env.local
+.env*.local
+
+# ── Android build artifacts ──
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/build/
+mobile/android/local.properties
+mobile/node_modules/
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo

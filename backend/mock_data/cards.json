@@ -1,0 +1,44 @@
+{
+  "cards": [
+    {
+      "card_id": "BAIY-2024-8A3F9E",
+      "display_id": "•••• •••• 8A3F",
+      "face_value": 1000.00,
+      "balance": 650.00,
+      "status": "active",
+      "issued_at": "2024-01-15",
+      "expires_at": "2026-01-15",
+      "tx_hash": null,
+      "redeem_store": null,
+      "transactions": [
+        {"date": "2024-03-10", "store": "百邑酒行·天河旗舰店", "amount": -350.00, "item": "贵州茅台×1"}
+      ]
+    },
+    {
+      "card_id": "BAIY-2024-C7D2B1",
+      "display_id": "•••• •••• C7D2",
+      "face_value": 500.00,
+      "balance": 0.00,
+      "status": "redeemed",
+      "issued_at": "2024-02-01",
+      "expires_at": "2026-02-01",
+      "tx_hash": "0x7a3f8b1c2d9e4f56a71b2c3d4e5f6a7b8c9d0e1f",
+      "redeem_store": "百邑酒行·珠江新城店",
+      "transactions": [
+        {"date": "2024-04-05", "store": "百邑酒行·珠江新城店", "amount": -500.00, "item": "轩尼诗XO×1"}
+      ]
+    },
+    {
+      "card_id": "BAIY-2024-F1A4C9",
+      "display_id": "•••• •••• F1A4",
+      "face_value": 2000.00,
+      "balance": 2000.00,
+      "status": "active",
+      "issued_at": "2024-03-20",
+      "expires_at": "2026-03-20",
+      "tx_hash": null,
+      "redeem_store": null,
+      "transactions": []
+    }
+  ]
+}

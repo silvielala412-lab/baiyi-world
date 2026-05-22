@@ -1,0 +1,89 @@
+.wrapper {
+  position: relative;
+  height: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Leaflet map fills wrapper */
+.map {
+  width: 100%;
+  height: 100%;
+  background: var(--dark-800);
+}
+
+/* Override leaflet default light zoom control */
+.wrapper :global(.leaflet-control-zoom) {
+  border: 1px solid rgba(200,169,110,0.3) !important;
+  background: rgba(10,8,6,0.9) !important;
+}
+
+.wrapper :global(.leaflet-control-zoom-in),
+.wrapper :global(.leaflet-control-zoom-out) {
+  color: var(--gold-400) !important;
+  background: rgba(10,8,6,0.9) !important;
+  border-bottom: 1px solid rgba(200,169,110,0.2) !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+}
+
+.wrapper :global(.leaflet-control-zoom-in:hover),
+.wrapper :global(.leaflet-control-zoom-out:hover) {
+  background: rgba(200,169,110,0.15) !important;
+}
+
+/* Attribution strip */
+.wrapper :global(.leaflet-control-attribution) {
+  font-size: 9px !important;
+  background: rgba(0,0,0,0.5) !important;
+  color: rgba(255,255,255,0.3) !important;
+}
+
+.wrapper :global(.leaflet-control-attribution a) {
+  color: rgba(200,169,110,0.5) !important;
+}
+
+/* Popup styling */
+.wrapper :global(.leaflet-popup-content-wrapper) {
+  background: rgba(18,16,8,0.97) !important;
+  border: 1px solid rgba(200,169,110,0.3) !important;
+  border-radius: 12px !important;
+  color: var(--cream-200) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+}
+
+.wrapper :global(.leaflet-popup-tip) {
+  background: rgba(200,169,110,0.4) !important;
+}
+
+.wrapper :global(.leaflet-popup-close-button) {
+  color: rgba(200,169,110,0.6) !important;
+}
+
+/* Loading overlay */
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background: var(--dark-800);
+  color: var(--cream-300);
+  font-size: 0.85rem;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(200,169,110,0.2);
+  border-top-color: var(--gold-400);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

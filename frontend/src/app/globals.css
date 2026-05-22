@@ -1,0 +1,633 @@
+/* ============================================================
+   百邑酒世界 · 全局设计系统 v2.0
+   对标天猫/抖音/美团 · 高端酒类消费平台
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* ── Brand Palette ── */
+  --gold-50:  #FFFDF5;
+  --gold-100: #FFF8E7;
+  --gold-200: #FFE8A3;
+  --gold-300: #E8C87A;
+  --gold-400: #C8A96E;
+  --gold-500: #B8942A;
+  --gold-600: #9C7A1E;
+  --gold-700: #7A5C0E;
+  --gold-800: #5A4208;
+
+  --dark-950: #050403;
+  --dark-900: #0A0806;
+  --dark-850: #0F0C08;
+  --dark-800: #16120A;
+  --dark-750: #1C1810;
+  --dark-700: #221E14;
+  --dark-600: #2A2218;
+  --dark-500: #3A3020;
+  --dark-400: #4A3E2A;
+  --dark-300: #5C5040;
+
+  --cream-50:  #FEFCF8;
+  --cream-100: #FAF6EF;
+  --cream-200: #F0E8D8;
+  --cream-300: #E0D0B8;
+  --cream-400: #C8B898;
+  --cream-500: #A89878;
+
+  /* ── Accent Colors ── */
+  --red-500:    #E53935;
+  --red-600:    #C62828;
+  --red-glow:   rgba(229, 57, 53, 0.25);
+  --green-500:  #43A047;
+  --green-glow: rgba(67, 160, 71, 0.2);
+  --blue-500:   #1E88E5;
+  --blue-glow:  rgba(30, 136, 229, 0.2);
+  --purple-500: #8E24AA;
+  --purple-glow:rgba(142, 36, 170, 0.2);
+  --orange-500: #FB8C00;
+  --teal-500:   #00897B;
+
+  /* ── Gradients ── */
+  --gradient-gold:        linear-gradient(135deg, #E8C87A 0%, #C8A96E 30%, #9C7A1E 65%, #C8A96E 100%);
+  --gradient-gold-flat:   linear-gradient(135deg, #C8A96E 0%, #9C7A1E 100%);
+  --gradient-gold-text:   linear-gradient(135deg, #FFE8A3 0%, #C8A96E 40%, #B8942A 100%);
+  --gradient-dark:        linear-gradient(180deg, #0A0806 0%, #1C1810 100%);
+  --gradient-dark-v:      linear-gradient(180deg, #050403 0%, #16120A 60%, #221E14 100%);
+  --gradient-card:        linear-gradient(145deg, rgba(200,169,110,0.12) 0%, rgba(16,12,8,0.97) 100%);
+  --gradient-card-hover:  linear-gradient(145deg, rgba(200,169,110,0.22) 0%, rgba(16,12,8,0.97) 100%);
+  --gradient-hero:        radial-gradient(ellipse at 25% 40%, rgba(200,169,110,0.18) 0%, transparent 55%),
+                          radial-gradient(ellipse at 75% 60%, rgba(184,148,42,0.1) 0%, transparent 55%),
+                          linear-gradient(180deg, #0A0806 0%, #1C1810 100%);
+  --gradient-glow-gold:   radial-gradient(ellipse at center, rgba(200,169,110,0.35) 0%, transparent 70%);
+  --gradient-surface:     linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+
+  /* ── Typography ── */
+  --font-display: 'Noto Serif SC', serif;
+  --font-body:    'Inter', 'Outfit', -apple-system, 'PingFang SC', sans-serif;
+  --font-number:  'Outfit', 'Inter', sans-serif;
+
+  /* ── Spacing Scale ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Legacy aliases */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ── Border Radius ── */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs:    0 1px 3px rgba(0,0,0,0.3);
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md:    0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:    0 8px 32px rgba(0,0,0,0.5);
+  --shadow-xl:    0 16px 48px rgba(0,0,0,0.6);
+  --shadow-2xl:   0 24px 64px rgba(0,0,0,0.7);
+  --shadow-gold:  0 4px 24px rgba(200,169,110,0.35), 0 0 0 1px rgba(200,169,110,0.15);
+  --shadow-gold-lg: 0 8px 40px rgba(200,169,110,0.45), 0 0 0 1px rgba(200,169,110,0.2);
+  --shadow-card:  0 4px 20px rgba(0,0,0,0.45), 0 1px 4px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.2);
+
+  /* ── Transitions ── */
+  --ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:  cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-spring:  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-fast: 0.12s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-mid:  0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-slow: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ── Z-Index ── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 50;
+  --z-navbar:  100;
+  --z-modal:   200;
+  --z-toast:   300;
+
+  /* ── Safe Areas ── */
+  --safe-top:    env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark-950);
+  color: var(--cream-200);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Subtle noise texture for depth */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul, ol { list-style: none; }
+input, textarea, select { font-family: inherit; }
+
+/* ── Typography Scale ── */
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; letter-spacing: -0.01em; }
+h5, h6 { font-family: var(--font-body); }
+
+.text-gold {
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gold-flat { color: var(--gold-400); }
+.text-cream     { color: var(--cream-200); }
+.text-muted     { color: var(--cream-400); }
+.text-dim       { color: var(--cream-500); opacity: 0.7; }
+.text-number    { font-family: var(--font-number); }
+
+/* ── Section Title ── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cream-100);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  letter-spacing: 0.02em;
+}
+
+.section-title-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200,169,110,0.4) 0%, transparent 100%);
+  margin-left: var(--space-sm);
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.page-content {
+  padding-bottom: calc(72px + var(--safe-bottom));
+  padding-top: 60px;
+  min-height: 100vh;
+  background: var(--gradient-dark-v);
+}
+
+/* ── Glass Surfaces ── */
+.glass {
+  background: rgba(22, 18, 10, 0.72);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+}
+
+.glass-card {
+  background: rgba(22, 18, 10, 0.82);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(200, 169, 110, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-surface {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md);
+}
+
+/* ── Buttons ── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 10px var(--space-lg);
+  background: var(--gradient-gold);
+  color: var(--dark-900);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition-mid);
+  box-shadow: var(--shadow-gold);
+  letter-spacing: 0.03em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.btn-gold:hover::before { opacity: 1; }
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-lg);
+}
+.btn-gold:active { transform: translateY(0) scale(0.97); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 9px var(--space-lg);
+  background: rgba(200,169,110,0.08);
+  color: var(--gold-300);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(200,169,110,0.3);
+  transition: var(--transition-mid);
+}
+
+.btn-ghost:hover {
+  background: rgba(200,169,110,0.15);
+  border-color: var(--gold-400);
+  color: var(--gold-200);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.78rem;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.badge-hot {
+  background: linear-gradient(135deg, rgba(229,57,53,0.25), rgba(198,40,40,0.15));
+  color: #FF5252;
+  border: 1px solid rgba(229,57,53,0.4);
+  box-shadow: 0 0 8px rgba(229,57,53,0.2);
+}
+
+.badge-new {
+  background: linear-gradient(135deg, rgba(67,160,71,0.2), rgba(27,94,32,0.1));
+  color: #69F0AE;
+  border: 1px solid rgba(67,160,71,0.35);
+  box-shadow: 0 0 8px rgba(67,160,71,0.15);
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, rgba(200,169,110,0.25), rgba(184,148,42,0.1));
+  color: var(--gold-200);
+  border: 1px solid rgba(200,169,110,0.4);
+}
+
+.badge-live {
+  background: linear-gradient(135deg, #E53935, #C62828);
+  color: white;
+  border: none;
+  box-shadow: 0 0 12px rgba(229,57,53,0.5);
+  animation: live-pulse 2s infinite;
+}
+
+/* ── Stars ── */
+.stars {
+  display: flex;
+  gap: 1px;
+  color: var(--gold-400);
+  font-size: 0.72rem;
+}
+
+/* ── Price ── */
+.price-symbol {
+  font-family: var(--font-number);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-400);
+  vertical-align: super;
+  line-height: 1;
+}
+
+.price-main {
+  font-family: var(--font-number);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--gold-400);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.price-original {
+  font-family: var(--font-number);
+  font-size: 0.78rem;
+  color: var(--cream-500);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* ── Dividers ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(200,169,110,0.2) 30%, rgba(200,169,110,0.2) 70%, transparent 100%);
+  margin: var(--space-md) 0;
+}
+
+.section-gap {
+  height: 8px;
+  background: var(--dark-950);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(200,169,110,0.25); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(200,169,110,0.45); }
+
+/* ── Skeleton Loading ── */
+.skeleton {
+  background: linear-gradient(
+    105deg,
+    var(--dark-750) 20%,
+    var(--dark-600) 40%,
+    rgba(200,169,110,0.06) 50%,
+    var(--dark-600) 60%,
+    var(--dark-750) 80%
+  );
+  background-size: 300% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(22,18,10,0.96);
+  border: 1px solid rgba(200,169,110,0.35);
+  color: var(--cream-100);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  z-index: var(--z-toast);
+  animation: toast-in 0.3s var(--ease-spring);
+  white-space: nowrap;
+  box-shadow: var(--shadow-xl), var(--shadow-gold);
+  backdrop-filter: blur(20px);
+}
+
+/* ── Live Badge ── */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #E53935, #B71C1C);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  box-shadow: 0 2px 12px rgba(229,57,53,0.45);
+}
+
+.live-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: live-dot 1.2s ease infinite;
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes live-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.6); }
+}
+
+@keyframes live-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(229,57,53,0.5); }
+  50%      { box-shadow: 0 0 20px rgba(229,57,53,0.8), 0 0 8px rgba(229,57,53,0.4); }
+}
+
+@keyframes gold-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,169,110,0.4); }
+  50%      { box-shadow: 0 0 0 6px rgba(200,169,110,0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Utility ── */
+.animate-fade-in-up   { animation: fadeInUp 0.45s var(--ease-smooth) forwards; }
+.animate-scale-in     { animation: scaleIn 0.35s var(--ease-spring) forwards; }
+.animate-float        { animation: float 3s ease-in-out infinite; }
+.animate-gold-glow    { animation: gold-glow 2s ease-in-out infinite; }
+
+.truncate-1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.truncate-2 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Responsive ── */
+
+/* 移动端：全屏填满 */
+@media (max-width: 480px) {
+  html, body { width: 100%; overflow-x: hidden; }
+}
+
+/* ── 桌面端：手机外壳模式 ── */
+@media (min-width: 481px) {
+
+  /* 深色星空背景 + 居中布局 */
+  html {
+    background: #080604;
+    background-image:
+      radial-gradient(ellipse at 30% 25%, rgba(70,45,10,0.35) 0%, transparent 55%),
+      radial-gradient(ellipse at 72% 75%, rgba(35,20,5,0.25) 0%, transparent 55%);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 0 48px;
+  }
+
+  /* 手机机身 */
+  body {
+    width: 390px;
+    min-height: 844px;
+    border-radius: 48px;
+    /* 机身立体感：外壳边框 + 深色投影 */
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.12),   /* 内高光边 */
+      0 0 0 10px #1c1c1e,                 /* 机身颜色 */
+      0 0 0 11px rgba(255,255,255,0.06),  /* 机身高光 */
+      0 0 0 13px #111,
+      0 50px 100px rgba(0,0,0,0.95),
+      0 25px 50px rgba(0,0,0,0.8),
+      inset 0 0 0 1px rgba(255,255,255,0.06); /* 内壁光感 */
+    position: relative;
+    flex-shrink: 0;
+    /* 关键：让 fixed 子元素相对于此 body 定位 */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* 圆角裁剪内容 */
+    isolation: isolate;
+  }
+
+  /* Dynamic Island 刘海 */
+  body::before {
+    content: '';
+    position: sticky;
+    top: 0;
+    display: block;
+    width: 126px;
+    height: 36px;
+    background: #0a0806;
+    border-radius: 0 0 22px 22px;
+    margin: 0 auto;
+    z-index: 9999;
+    box-shadow:
+      inset 0 -1px 0 rgba(255,255,255,0.06),
+      0 2px 12px rgba(0,0,0,0.6);
+    pointer-events: none;
+  }
+
+  /* 相机小镜头 */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 42px;   /* 24px (html padding) + 18px */
+    left: calc(50% + 32px);
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle at 35% 35%, #2a2a3a, #111);
+    border-radius: 50%;
+    z-index: 10000;
+    box-shadow:
+      0 0 0 1.5px rgba(80,80,100,0.5),
+      inset 0 0 4px rgba(0,80,180,0.2);
+    pointer-events: none;
+  }
+
+  /* 左侧音量/静音键 */
+  html::before {
+    content: '';
+    position: fixed;
+    left: calc(50% - 206px);
+    top: calc(24px + 148px);
+    width: 3px;
+    height: 32px;
+    background: linear-gradient(180deg, #2a2a2a, #333);
+    border-radius: 2px 0 0 2px;
+    box-shadow:
+      0 44px 0 #2a2a2a,
+      0 84px 0 #2a2a2a;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* 右侧锁屏键 */
+  html::after {
+    content: '';
+    position: fixed;
+    right: calc(50% - 206px);
+    top: calc(24px + 180px);
+    width: 3px;
+    height: 64px;
+    background: linear-gradient(180deg, #2a2a2a, #333);
+    border-radius: 0 2px 2px 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* 内容区 container */
+  .container { max-width: 390px; }
+}
+

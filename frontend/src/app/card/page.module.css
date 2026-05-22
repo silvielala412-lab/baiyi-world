@@ -1,0 +1,256 @@
+.introCard {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  background: rgba(18,16,8,0.8);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.chainIcon { font-size: 2.5rem; margin-bottom: var(--space-sm); }
+
+.introTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cream-100);
+  margin-bottom: var(--space-sm);
+}
+
+.introDesc {
+  font-size: 0.85rem;
+  color: rgba(224,208,184,0.6);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-sm);
+  background: rgba(200,169,110,0.05);
+  border: 1px solid rgba(200,169,110,0.15);
+  border-radius: var(--radius-md);
+  font-size: 0.7rem;
+  color: var(--cream-300);
+}
+
+.feature span:first-child { font-size: 1.2rem; }
+
+.queryBox {
+  background: rgba(18,16,8,0.8);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.queryLabel {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold-400);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.inputRow {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.input {
+  flex: 1;
+  background: rgba(10,8,6,0.9);
+  border: 1px solid rgba(200,169,110,0.3);
+  border-radius: var(--radius-md);
+  padding: 10px var(--space-md);
+  color: var(--cream-100);
+  font-family: monospace;
+  font-size: 0.85rem;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.input::placeholder { color: rgba(224,208,184,0.3); }
+.input:focus { border-color: var(--gold-400); }
+
+.demos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.demoLabel { font-size: 0.7rem; color: rgba(224,208,184,0.4); }
+
+.demoChip {
+  padding: 3px 10px;
+  background: rgba(200,169,110,0.1);
+  border: 1px solid rgba(200,169,110,0.25);
+  color: var(--gold-400);
+  font-size: 0.7rem;
+  font-family: monospace;
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+}
+
+.demoChip:hover { background: rgba(200,169,110,0.2); }
+
+.errorMsg {
+  background: rgba(231,76,60,0.1);
+  border: 1px solid rgba(231,76,60,0.3);
+  color: #E74C3C;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* Card Face */
+.resultCard {
+  animation: fadeInUp 0.4s ease;
+}
+
+.cardFace {
+  background: linear-gradient(135deg, #2A1F00 0%, #1A1200 40%, #2D2000 100%);
+  border: 1px solid var(--gold-400);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(200,169,110,0.25);
+}
+
+.cardFace::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,169,110,0.2);
+}
+
+.cardFace::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,169,110,0.15);
+}
+
+.cardTop, .cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardBrand {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cardBalance {
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+
+.balanceLabel {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(200,169,110,0.6);
+  margin-bottom: 4px;
+}
+
+.balanceValue {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold-400);
+  font-family: var(--font-display);
+}
+
+.cardBottom {
+  font-size: 0.7rem;
+  color: rgba(224,208,184,0.5);
+  font-family: monospace;
+}
+
+.cardChip {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-size: 1.8rem;
+  opacity: 0.4;
+}
+
+/* Detail table */
+.detail {
+  background: rgba(18,16,8,0.8);
+  border: 1px solid rgba(200,169,110,0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px var(--space-lg);
+  border-bottom: 1px solid rgba(200,169,110,0.08);
+  font-size: 0.82rem;
+}
+
+.detailRow:last-child { border-bottom: none; }
+.detailRow span:first-child { color: rgba(224,208,184,0.5); }
+.detailRow span:last-child { color: var(--cream-100); font-weight: 500; }
+
+.hash { font-family: monospace; font-size: 0.72rem; color: var(--blue-accent); }
+
+/* Transactions */
+.txSection {
+  background: rgba(18,16,8,0.8);
+  border: 1px solid rgba(200,169,110,0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.txTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cream-200);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid rgba(200,169,110,0.1);
+}
+
+.txRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid rgba(200,169,110,0.05);
+}
+
+.txItem { font-size: 0.85rem; color: var(--cream-100); margin-bottom: 2px; }
+.txStore { font-size: 0.7rem; color: rgba(224,208,184,0.4); margin-bottom: 2px; }
+.txDate { font-size: 0.65rem; color: rgba(224,208,184,0.3); }
+.txAmount { font-size: 1rem; font-weight: 700; font-family: var(--font-display); }

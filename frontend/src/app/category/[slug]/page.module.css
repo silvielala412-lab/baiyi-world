@@ -1,0 +1,50 @@
+.brandAd {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand-color) 20%, var(--dark-800)) 0%, var(--dark-800) 100%);
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-color) 40%, transparent);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+}
+
+.brandName {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cream-100);
+  margin-bottom: 4px;
+}
+
+.brandSlogan {
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--brand-color) 80%, white);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.resultMeta {
+  padding: var(--space-sm) 0 var(--space-md);
+  font-size: 0.75rem;
+  color: rgba(224,208,184,0.4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+  color: var(--cream-300);
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.empty span { font-size: 3rem; }
+.empty p { font-size: 1rem; }
+.empty small { font-size: 0.75rem; }

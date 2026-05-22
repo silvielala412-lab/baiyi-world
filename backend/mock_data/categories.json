@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {"id": "maotai", "name": "年份个性化茅台", "icon": "🏺", "slug": "maotai", "description": "每一滴都是时光的沉淀", "color": "#C8A96E", "banner": "/banners/maotai.jpg"},
+    {"id": "baijiu-sauce", "name": "酱香型白酒", "icon": "🍶", "slug": "baijiu-sauce", "description": "千年工艺，醇厚悠长", "color": "#D4784A", "banner": "/banners/sauce.jpg"},
+    {"id": "baijiu-strong", "name": "浓香型白酒", "icon": "🫙", "slug": "baijiu-strong", "description": "窖香幽雅，绵甜爽净", "color": "#8B6914", "banner": "/banners/strong.jpg"},
+    {"id": "cognac", "name": "干邑白兰地", "icon": "🍾", "slug": "cognac", "description": "法兰西阳光的馈赠", "color": "#722F37", "banner": "/banners/cognac.jpg"},
+    {"id": "whisky", "name": "威士忌", "icon": "🥃", "slug": "whisky", "description": "橡木桶陈年，岁月之味", "color": "#8B4513", "banner": "/banners/whisky.jpg"},
+    {"id": "red-wine", "name": "红葡萄酒", "icon": "🍷", "slug": "red-wine", "description": "产区风土，每瓶故事", "color": "#722F37", "banner": "/banners/redwine.jpg"},
+    {"id": "vodka", "name": "伏特加", "icon": "🥂", "slug": "vodka", "description": "纯粮蒸馏，晶莹剔透", "color": "#4A90D9", "banner": "/banners/vodka.jpg"},
+    {"id": "health-wine", "name": "保健酒", "icon": "💚", "slug": "health-wine", "description": "草本精华，养生之道", "color": "#2D8B57", "banner": "/banners/health.jpg"},
+    {"id": "sake", "name": "清酒", "icon": "🍶", "slug": "sake", "description": "米之精髓，东瀛雅韵", "color": "#E8D5B7", "banner": "/banners/sake.jpg"},
+    {"id": "cocktail", "name": "鸡尾酒 / 果酒", "icon": "🍹", "slug": "cocktail", "description": "色彩斑斓，调配艺术", "color": "#FF6B9D", "banner": "/banners/cocktail.jpg"},
+    {"id": "liqueur", "name": "利口酒", "icon": "🫗", "slug": "liqueur", "description": "甘甜芬芳，百种风味", "color": "#9B59B6", "banner": "/banners/liqueur.jpg"},
+    {"id": "beer-import", "name": "进口啤酒", "icon": "🍺", "slug": "beer-import", "description": "世界各地精酿之选", "color": "#F39C12", "banner": "/banners/beer.jpg"},
+    {"id": "beer-domestic", "name": "国产啤酒", "icon": "🍻", "slug": "beer-domestic", "description": "本土精酿，匠心酿造", "color": "#E67E22", "banner": "/banners/beer-cn.jpg"},
+    {"id": "tea", "name": "茗茶 + 精品茶具", "icon": "🫖", "slug": "tea", "description": "百年老茶，高端茶器", "color": "#27AE60", "banner": "/banners/tea.jpg"},
+    {"id": "cigar", "name": "精品雪茄", "icon": "🚬", "slug": "cigar", "description": "古巴风情，大师之作", "color": "#795548", "banner": "/banners/cigar.jpg"},
+    {"id": "gift", "name": "饼礼 / 手信伴手礼", "icon": "🎁", "slug": "gift", "description": "心意满满，礼品首选", "color": "#E91E8C", "banner": "/banners/gift.jpg"},
+    {"id": "food", "name": "高端土特产下酒菜", "icon": "🥩", "slug": "food", "description": "火锅食材 · 卤水拼盘 · 大闸蟹", "color": "#FF5722", "banner": "/banners/food.jpg"},
+    {"id": "flower", "name": "鲜花定制", "icon": "🌹", "slug": "flower", "description": "每一束都是告白", "color": "#E91E8C", "banner": "/banners/flower.jpg"},
+    {"id": "flash-sale", "name": "特价促销", "icon": "🔥", "slug": "flash-sale", "description": "限时特惠，抢购进行中", "color": "#F44336", "banner": "/banners/sale.jpg"},
+    {"id": "new-arrivals", "name": "新品上市", "icon": "✨", "slug": "new-arrivals", "description": "全球新品，抢先尝鲜", "color": "#3F51B5", "banner": "/banners/new.jpg"}
+  ]
+}

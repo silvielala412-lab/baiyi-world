@@ -1,0 +1,68 @@
+.wrapper {
+  background: rgba(10, 8, 6, 0.95);
+  border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+  position: sticky;
+  top: 60px;
+  z-index: 50;
+  padding: var(--space-sm) 0;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 4px var(--space-md);
+}
+
+.label {
+  font-size: 0.7rem;
+  color: var(--gold-400);
+  flex-shrink: 0;
+  font-weight: 600;
+  width: 28px;
+}
+
+.scrollRow {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px var(--space-md);
+  scrollbar-width: none;
+}
+
+.scrollRow::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  background: rgba(30, 25, 15, 0.8);
+  border: 1px solid rgba(200, 169, 110, 0.2);
+  color: rgba(224, 208, 184, 0.6);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.chip:hover {
+  border-color: rgba(200, 169, 110, 0.5);
+  color: var(--cream-100);
+}
+
+.active {
+  background: var(--gradient-gold);
+  background-clip: padding-box;
+  border-color: var(--gold-400);
+  color: var(--dark-900) !important;
+  font-weight: 700;
+}
+
+.reset {
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+}
+
+.reset:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+}

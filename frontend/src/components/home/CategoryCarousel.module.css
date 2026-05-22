@@ -1,0 +1,114 @@
+/* ── CategoryGrid v3 · 4行×5列 固定格子分类 ── */
+
+.section {
+  background: var(--dark-900);
+  padding: var(--space-3) 0 var(--space-3);
+}
+
+/* ── Each row of 5 ── */
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 8px var(--space-2);
+}
+
+.rowDivider {
+  border-bottom: 1px solid rgba(200, 169, 110, 0.08);
+}
+
+/* ── Single item (icon + label) ── */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  max-width: 20%;
+  padding: 4px 2px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s ease;
+  text-decoration: none;
+}
+
+.item:active  { transform: scale(0.85); }
+.item:hover   { transform: translateY(-2px); }
+
+/* ── Icon wrapper ── */
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  /* Background */
+  background: radial-gradient(
+    circle at 50% 65%,
+    color-mix(in srgb, var(--cat-color) 22%, rgba(18,14,8,0.98)) 0%,
+    rgba(14, 11, 8, 0.97) 70%
+  );
+  border: 1px solid color-mix(in srgb, var(--cat-color) 28%, rgba(255,255,255,0.05));
+  box-shadow:
+    0 2px 10px rgba(0,0,0,0.45),
+    0 0 16px color-mix(in srgb, var(--cat-color) 15%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+/* Top sheen */
+.iconWrap::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 38%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 100%);
+  border-radius: 14px 14px 0 0;
+  pointer-events: none;
+}
+
+.item:hover .iconWrap {
+  border-color: color-mix(in srgb, var(--cat-color) 50%, rgba(255,255,255,0.1));
+  box-shadow:
+    0 4px 18px rgba(0,0,0,0.5),
+    0 0 28px color-mix(in srgb, var(--cat-color) 28%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* ── Hot badge ── */
+.hotBadge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--red-500, #E53935);
+  color: white;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 2px 4px;
+  border-radius: 6px;
+  border: 1.5px solid var(--dark-900);
+  box-shadow: 0 2px 6px rgba(229,57,53,0.55);
+  z-index: 2;
+  line-height: 1;
+}
+
+/* ── Category name ── */
+.name {
+  font-size: 0.64rem;
+  color: var(--cream-400, #b8a98a);
+  text-align: center;
+  white-space: nowrap;
+  max-width: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+  line-height: 1.2;
+}
+
+.item:hover .name { color: var(--cream-100, #f5ecd7); }
