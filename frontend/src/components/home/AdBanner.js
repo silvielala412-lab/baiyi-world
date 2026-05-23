@@ -107,9 +107,11 @@ export default function AdBanner({ ads }) {
               <h2 className={styles.title}>{item.title}</h2>
               <p className={styles.subtitle}>{item.subtitle}</p>
               <div className={styles.footer}>
-                <Link href={item.link} className={styles.cta}>
+                  <Link href={item.link} className={styles.cta}>
                   {item.cta}
-                  <span className={styles.ctaArrow}>→</span>
+                  <svg className={styles.ctaArrow} viewBox="0 0 16 16" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </Link>
                 <span className={styles.counter}>{i + 1}/{items.length}</span>
               </div>

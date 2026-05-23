@@ -161,11 +161,13 @@
 }
 
 .ctaArrow {
-  font-size: 0.85rem;
-  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
 }
 
-.cta:hover .ctaArrow { transform: translateX(2px); }
+.cta:hover .ctaArrow { transform: translateX(3px); }
 
 /* ── Slide counter ── */
 .counter {

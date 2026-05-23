@@ -14,6 +14,7 @@ function getCategoryIcon(category) {
     'health-wine': '💚', sake: '🫙', cocktail: '🍹', liqueur: '🫗',
     'beer-import': '🍺', 'beer-domestic': '🍻', tea: '🫖', cigar: '🚬',
     gift: '🎁', food: '🥩', flower: '🌹',
+    supplement: '💊', snack: '🍿', drinks: '🧃', poker: '🃏',
   };
   return map[category] ?? '🍶';
 }
@@ -75,7 +76,7 @@ export default function ProductClient() {
     return (
       <main>
         <TopBar showBack title="商品详情" />
-        <div className="page-content" style={{ paddingTop: 56 }}>
+        <div className="page-content" style={{ paddingTop: 64 }}>
           <div className={styles.skeletonHero} />
           <div style={{ padding: '24px 16px' }}>
             <div className="skeleton" style={{ height: 28, borderRadius: 8, marginBottom: 12 }} />
@@ -91,7 +92,7 @@ export default function ProductClient() {
     return (
       <main>
         <TopBar showBack title="商品详情" />
-        <div className="page-content" style={{ paddingTop: 56, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 16 }}>
+        <div className="page-content" style={{ paddingTop: 64, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: 16 }}>
           <span style={{ fontSize: 64 }}>🍾</span>
           <h2 style={{ color: 'var(--text-primary)', fontSize: 20 }}>商品不存在</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: 14 }}>该商品可能已下架或链接有误</p>
@@ -111,7 +112,7 @@ export default function ProductClient() {
   return (
     <main>
       <TopBar showBack title="商品详情" />
-      <div className="page-content" style={{ paddingTop: 56, paddingBottom: 90 }}>
+      <div className="page-content" style={{ paddingTop: 64, paddingBottom: 90 }}>
 
         {/* ── Hero Image ── */}
         <div className={styles.heroWrap}>
@@ -298,6 +299,7 @@ function getCategoryColor(category) {
     cognac: '#722F37', whisky: '#8B4513', 'red-wine': '#722F37',
     vodka: '#4A90D9', sake: '#C8AD7F', tea: '#27AE60', cigar: '#795548',
     gift: '#E91E8C', food: '#FF5722', 'beer-import': '#F39C12',
+    supplement: '#00897B', snack: '#FB8C00', drinks: '#039BE5', poker: '#E53935',
   };
   return map[category] ?? '#C8A96E';
 }
