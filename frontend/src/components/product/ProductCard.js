@@ -19,7 +19,15 @@ export default function ProductCard({ product, compact = false }) {
     <Link href={`/product/${product.id}`} className={`${styles.card} ${compact ? styles.compact : ''}`}>
       {/* ── Image Area ── */}
       <div className={styles.imageWrap}>
-        <div className={styles.imagePlaceholder}>
+        {product.thumbnail ? (
+          <img
+            src={product.thumbnail}
+            alt={product.name}
+            className={styles.productImg}
+            onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+          />
+        ) : null}
+        <div className={styles.imagePlaceholder} style={product.thumbnail ? {display:'none'} : {}}>
           <span className={styles.categoryIcon}>
             {getCategoryIcon(product.category)}
           </span>

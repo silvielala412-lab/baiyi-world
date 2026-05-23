@@ -42,6 +42,18 @@
   flex-shrink: 0;
 }
 
+/* Real product photo */
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .productImg { transform: scale(1.06); }
+
 .compact .imageWrap {
   width: 88px;
   flex-shrink: 0;
