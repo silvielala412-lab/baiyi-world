@@ -247,6 +247,74 @@ const CATEGORIES = [
         <text x="27" y="40" fontSize="10" fill="#E53935" fontFamily="serif" fontWeight="bold" transform="rotate(180,27,37)">A</text>
       </svg>
     )},
+
+  // Row 5 · 茗茶 / 雪茄 / 精酿 / 利口酒 / 礼品卡
+  { id: 'tea',          name: '茗茶',    slug: 'tea',          color: '#27AE60',
+    svg: (
+      <svg viewBox="0 0 44 46" width="36" height="38" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,16 Q8,28 10,36 L34,36 Q36,28 34,16 Z" fill="#27AE60" opacity="0.85"/>
+        <path d="M34,22 Q42,22 42,28 Q42,34 34,32" fill="none" stroke="#27AE60" strokeWidth="3" strokeLinecap="round"/>
+        <rect x="10" y="36" width="24" height="4" rx="2" fill="#1B5E20"/>
+        <path d="M20,4 Q22,10 24,4" fill="none" stroke="#81C784" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M16,7 Q19,13 22,8" fill="none" stroke="#A5D6A7" strokeWidth="1.5" strokeLinecap="round"/>
+        <rect x="12" y="20" width="20" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+        <rect x="12" y="26" width="20" height="2" rx="1" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    )},
+  { id: 'cigar',        name: '精品雪茄', slug: 'cigar',       color: '#795548',
+    svg: (
+      <svg viewBox="0 0 52 20" width="44" height="16" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="6" width="38" height="8" rx="4" fill="#795548"/>
+        <rect x="2" y="6" width="10" height="8" rx="4" fill="#5D4037"/>
+        <rect x="2" y="7" width="38" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+        <rect x="12" y="7" width="20" height="6" rx="2" fill="rgba(255,200,100,0.15)"/>
+        <ellipse cx="40" cy="10" rx="8" ry="4" fill="#A1887F"/>
+        <rect x="8" y="7" width="2" height="6" rx="1" fill="rgba(255,255,255,0.2)"/>
+        <circle cx="46" cy="6" r="3" fill="#FF8F00" opacity="0.7"/>
+        <circle cx="46" cy="6" r="1.5" fill="#FFCC02" opacity="0.9"/>
+      </svg>
+    )},
+  { id: 'craft-beer',   name: '精酿啤酒', slug: 'craft-beer',  color: '#FF8F00',
+    svg: (
+      <svg viewBox="0 0 40 50" width="32" height="40" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="14" width="24" height="28" rx="5" fill="#FF8F00"/>
+        <rect x="8" y="8" width="24" height="10" rx="5" fill="white" opacity="0.9"/>
+        <rect x="32" y="20" width="6" height="10" rx="3" fill="#E65100"/>
+        <rect x="10" y="18" width="20" height="16" rx="3" fill="rgba(255,220,50,0.3)"/>
+        <rect x="10" y="40" width="20" height="4" rx="2" fill="#BF360C"/>
+        <circle cx="16" cy="10" r="2" fill="#FF8F00" opacity="0.5"/>
+        <circle cx="22" cy="9" r="1.5" fill="#FF8F00" opacity="0.4"/>
+        <circle cx="28" cy="11" r="2.5" fill="#FF8F00" opacity="0.5"/>
+        <rect x="11" y="20" width="4" height="12" rx="2" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    )},
+  { id: 'liqueur',      name: '利口酒',  slug: 'liqueur',      color: '#7B1FA2',
+    svg: (
+      <svg viewBox="0 0 36 52" width="28" height="42" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="0" width="6" height="5" rx="2" fill="#CE93D8"/>
+        <rect x="15.5" y="5" width="5" height="9" rx="1" fill="#9C27B0"/>
+        <path d="M12,14 Q10,18 10,22 L26,22 Q26,18 24,14 Z" fill="#7B1FA2"/>
+        <rect x="10" y="22" width="16" height="20" rx="3" fill="#7B1FA2"/>
+        <rect x="12" y="25" width="12" height="9" rx="2" fill="rgba(255,200,255,0.25)"/>
+        <text x="18" y="33" textAnchor="middle" fontSize="5" fill="#E1BEE7" fontFamily="sans-serif">利口</text>
+        <rect x="11" y="40" width="14" height="4" rx="2" fill="#4A148C"/>
+        <rect x="12" y="19" width="3" height="17" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    )},
+  { id: 'gift-card',    name: '礼品卡',  slug: 'gift-card',    color: '#E91E63',
+    svg: (
+      <svg viewBox="0 0 44 32" width="36" height="26" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="4" width="40" height="24" rx="5" fill="#E91E63"/>
+        <rect x="2" y="4" width="40" height="10" rx="5" fill="#C2185B"/>
+        <rect x="2" y="14" width="40" height="4" fill="#AD1457"/>
+        <rect x="6" y="20" width="14" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+        <rect x="6" y="8" width="8" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <rect x="30" y="7" width="8" height="2" rx="1" fill="rgba(255,255,255,0.5)"/>
+        <rect x="30" y="11" width="6" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="34" cy="22" r="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/>
+        <text x="34" y="24" textAnchor="middle" fontSize="4" fill="white">¥</text>
+      </svg>
+    )},
 ];
 
 // Group into rows of 5
